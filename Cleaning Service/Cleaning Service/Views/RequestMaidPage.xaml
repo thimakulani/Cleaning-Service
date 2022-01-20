@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cleaning_Service.Views.RequestMaidPage">
+    <pages:PopupPage.Animation>
+        <pages:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" 
+        />
+    </pages:PopupPage.Animation>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Frame>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton Source="marker_map_icon"
+                                     BackgroundColor="Transparent"
+                                     x:Name="ImgPickAddress"  
+                                     Clicked="ImgLocation_Clicked"
+                                     HeightRequest="30" WidthRequest="30"/>
+                        <Label Text="Select Place of work" Margin="5" x:Name="TxtPlaceAddress" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <Entry Placeholder="Salary p.m" Keyboard="Numeric" x:Name="InputPrice"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Start Working From" VerticalOptions="Center" FontSize="16" FontAttributes="Bold" />
+                        <DatePicker VerticalOptions="Center" FontAttributes="Bold" FontSize="16" x:Name="SelectedDates"/>
+                    </StackLayout>
+                    <Button HeightRequest="35" Text="Submit" x:Name="BtnSubmit" Clicked="BtnSubmit_Clicked"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

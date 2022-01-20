@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1030783150209",
+    "project_id": "rentamaidapp",
+    "storage_bucket": "rentamaidapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030783150209:android:7a1ad4d27da484ca6f4580",
+        "android_client_info": {
+          "package_name": "com.rent_a_maid.rent_a_maid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030783150209-pp22nr4qhs26p5k454e73kotam7l1iqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKDXzpSHCW5D0MpiaBBgQx9b0CHhwY2TU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030783150209-pp22nr4qhs26p5k454e73kotam7l1iqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

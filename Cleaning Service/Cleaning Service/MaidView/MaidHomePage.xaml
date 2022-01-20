@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cleaning_Service.MaidView.MaidHomePage"
+             Shell.NavBarIsVisible="False"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="White" Orientation="Horizontal">
+                <Button HorizontalOptions="EndAndExpand" Padding="0" HeightRequest="35" 
+                        x:Name="BtnLogout" Clicked="BtnLogout_Clicked"  
+                        TextColor="{StaticResource Primary}" 
+                        Margin="5" Text="Logout" BackgroundColor="Transparent" 
+                        CornerRadius="15" BorderColor="{StaticResource Primary}"
+                        BorderWidth="2"
+                        
+                        />
+            </StackLayout>
+            <Frame Padding="5" Margin="5" IsVisible="false">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="ACTIVELY LOOKING" FontAttributes="Bold" FontSize="Medium" VerticalOptions="Center"  />
+                    <CheckBox HorizontalOptions="End" Grid.Column="1" x:Name="StatusCheck" CheckedChanged="StatusCheck_CheckedChanged" />
+                </Grid>
+            </Frame>
+            <Frame>
+                <Grid>
+                    
+                </Grid>
+            </Frame>
+            <StackLayout>
+                <Label Text="SERVICES REQUESTED" FontAttributes="Bold" Margin="5" TextColor="{StaticResource Primary}" FontSize="20"/>
+                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                    <Image HeightRequest="25" WidthRequest="25" HorizontalOptions="End"   VerticalOptions="Center"/>
+                    <Label VerticalOptions="Center" FontAttributes="Bold" Margin="5" TextColor="WhiteSmoke" FontSize="16" 
+                           HorizontalOptions="End" x:Name="TxtLocation"/>
+                </StackLayout>
+                <CollectionView EmptyView="No Items" 
+                                x:Name="RequestedMaidService" 
+                                BackgroundColor="Transparent"
+                                SelectionMode="Single" 
+                                
+                                >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame Margin="5" CornerRadius="5" Padding="0" HasShadow="True">
+                                    <StackLayout>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Margin="10" Orientation="Vertical">
+                                                <Label Text="Householder"/>
+                                                <Label Text="Salary P.M"/>
+                                                <Label Text="Starting From"/>
+                                                <Label Text="Status" />
+                                                <Label Text="Address" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" Margin="10" Orientation="Vertical">
+                                                <Label Text="{Binding User}"/>
+                                                <Label Text="{Binding Price}"/>
+                                                <Label Text="{Binding StartDate}"/>
+                                                <Label Text="{Binding Status}" TextColor="Green"/>
+                                                <Label Text="{Binding Address}" />
+
+                                            </StackLayout>
+
+                                        </Grid>
+                                        <Grid IsVisible="{Binding BtnVisible}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Button HeightRequest="30" Margin="5" Text="Accept" Padding="0" CommandParameter="{Binding Id}" x:Name="BtnAccept" Clicked="BtnAccept_Clicked"/>
+                                            <Button Grid.Column="1" HeightRequest="30" Margin="5" Text="Decline" Padding="0" CommandParameter="{Binding Id}" x:Name="BtnReject" Clicked="BtnReject_Clicked"/>
+                                        </Grid>
+                                        
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="Cleaning_Service.Views.HomePage"
+             Shell.NavBarIsVisible="False"
+             
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="{StaticResource Primary}"
+                         Padding="5" Orientation="Horizontal">
+                <Label Text="FIND YOUR NEAREST MAID" FontAttributes="Bold" FontSize="20" TextColor="Wheat" VerticalOptions="Center"/>
+                <Button HorizontalOptions="EndAndExpand" Padding="0" HeightRequest="35" 
+                        x:Name="BtnLogout" Clicked="BtnLogout_Clicked" 
+                        TextColor="Wheat" 
+                        BorderColor="Wheat"
+                        VerticalOptions="Center"
+                        Margin="5" Text="Logout" BackgroundColor="Transparent" 
+                        CornerRadius="15" 
+                        BorderWidth="2"
+                        
+                        />
+            </StackLayout>
+            
+            <Grid VerticalOptions="FillAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <map:Map x:Name="g_map" MapType="Street" HasZoomEnabled="True" Grid.Row="0"/>
+                <Image IsVisible="false" Source="marker_map_icon"  HeightRequest="40" WidthRequest="40" HorizontalOptions="Center" VerticalOptions="Center"/>
+               
+            </Grid>
+            <Button Text="REQUEST A MAID" IsVisible="false" CornerRadius="12" Margin="10" HeightRequest="35" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:core="clr-namespace:XF.Material.Outline.Core;assembly=XF.Material.Outline.Core"
+             x:Class="Cleaning_Service.Views.PageProfile"
+             Shell.NavBarIsVisible="False"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <BoxView BackgroundColor="#063E8A" />
+                <Label Text="PROFILE INFORMATION" FontSize="26" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <ScrollView Grid.Row="1" Orientation="Vertical">
+                    <Frame>
+                        <StackLayout>
+                            <Frame HasShadow="True">
+                                <StackLayout>
+                                    <Entry Margin="15,5,15,5" Placeholder="Name" Text="{Binding FirstName}" Keyboard="Text"/>
+                                    <Entry Margin="15,5,15,5" Placeholder="Last Name" Text="{Binding LastName}" Keyboard="Text"/>
+                                    <Entry Margin="15,5,15,5" Placeholder="Address" Text="{Binding Address}" Keyboard="Text"/>
+                                    <Entry Margin="15,5,15,5" Placeholder="Phone Number" Text="{Binding Phone}" Keyboard="Telephone"/>
+                                    <Entry Margin="15,5,15,5" Placeholder="Email Address" Text="{Binding Email}" Keyboard="Email"/>
+                                    <Entry IsEnabled="False" Margin="15,5,15,5" Placeholder="Role" Text="{Binding Role}" Keyboard="Text"/>
+                                    <Button Margin="15" Text="UDATE"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                </ScrollView>
+            </Grid>
+        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

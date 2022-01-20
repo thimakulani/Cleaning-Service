@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  
+    xmlns:pages="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="Cleaning_Service.Views.MapDialog">
+    <pages:PopupPage.Animation>
+        <pages:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" 
+        />
+    </pages:PopupPage.Animation>
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <map:Map x:Name="g_maps" MapType="Street" HasZoomEnabled="True" Grid.Row="0"/>
+                <Image Source="marker_map_icon"  HeightRequest="40" WidthRequest="40" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+            <StackLayout BackgroundColor="White">
+                <Label x:Name="TxTAddress" Margin="10"/>
+                <Button Text="SUBMIT" CornerRadius="12" Margin="10" x:Name="BtnSubmit" Clicked="BtnSubmit_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

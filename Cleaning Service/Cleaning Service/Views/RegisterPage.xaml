@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cleaning_Service.Views.RegisterPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <BoxView BackgroundColor="#063E8A" />
+            <Label Text="PERSONAL INFORMATION" FontSize="26" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <ScrollView Grid.Row="1" Orientation="Vertical">
+                <Frame>
+                    <StackLayout>
+                        <Frame HasShadow="True">
+                            <StackLayout>
+                                <Entry Margin="15,5,15,5" Placeholder="Name" Text="{Binding Name}"/>
+                                <Entry Margin="15,5,15,5" Placeholder="Last Name" Text="{Binding LastName}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <ImageButton Source="marker_map_icon" x:Name="ImgLocation" 
+                                                 BackgroundColor="Transparent"
+                                                 Command="{Binding OnSubmitLocation}" HeightRequest="30" WidthRequest="30"/>
+                                    <Label Text="{Binding Address,TargetNullValue='Select Location'}" Margin="5" VerticalOptions="Center"/>
+                                </StackLayout>
+                                <Frame CornerRadius="5" Padding="5" Margin="5" HasShadow="True">
+                                    <StackLayout Orientation="Horizontal" >
+                                        <Picker x:Name="picker"
+                                            Title="Select a Role"
+                                            TitleColor="{StaticResource Primary}"
+                                            SelectedItem="{Binding Role}"
+                                            FontAttributes="Bold"
+                                                >                   
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>Maid</x:String>
+                                                    <x:String>House Hold</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+                                    </StackLayout>
+                                </Frame>
+                                <Entry Margin="15,5,15,5" Placeholder="Email" Text="{Binding Email}"/>
+                                <Entry Margin="15,5,15,5" Placeholder="Phone Number" Text="{Binding PhoneNumber}"/>
+                                <Entry Margin="15,5,15,5" Placeholder="Password" Text="{Binding Password}"/>
+                                <StackLayout Grid.Row="2" 
+                                         Orientation="Horizontal" 
+                                         HorizontalOptions="EndAndExpand">
+                                    <Button CornerRadius="7" Text="REGISTER" 
+                                            HeightRequest="35"
+                                            Margin="15,5,15,5"
+                                            Command="{Binding OnSignUpCommand}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

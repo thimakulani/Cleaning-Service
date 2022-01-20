@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:cleaning_service="clr-namespace:Cleaning_Service"
+             x:Class="Cleaning_Service.Views.RecentRequestsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="MAID REQUESTED" FontAttributes="Bold" Margin="15" TextColor="{StaticResource Primary}" FontSize="20"/>
+                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                    <Image HeightRequest="25" WidthRequest="25" HorizontalOptions="End" Source="location_map_icon" VerticalOptions="Center"/>
+                    <Label VerticalOptions="Center" FontAttributes="Bold" Margin="5" TextColor="WhiteSmoke" FontSize="16" HorizontalOptions="End" x:Name="TxtLocation"/>
+                </StackLayout>
+                <CollectionView EmptyView="No Items" 
+                                x:Name="RequestedMaids" 
+                                BackgroundColor="Transparent"
+                                SelectionMode="Single" 
+                                
+                                >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame Margin="5" CornerRadius="5" Padding="0" HasShadow="True">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Margin="10" Orientation="Vertical">
+                                            <Label Text="Maid"/>
+                                            <Label Text="Price"/>
+                                            <Label Text="Starting From"/>
+                                            <Label Text="Status" />
+                                            <Label Text="Address" />
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" Margin="10" Orientation="Vertical">
+                                            <Label Text="{Binding User}"/>
+                                            <Label Text="{Binding Price}"/>
+                                            <Label Text="{Binding StartDate}"/>
+                                            <Label Text="{Binding Status}" />
+                                            <Label Text="{Binding Address}" />
+                                            
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
