@@ -9,7 +9,7 @@
         <StackLayout>
             <StackLayout BackgroundColor="{StaticResource Primary}"
                          Padding="5" Orientation="Horizontal">
-                <Label Text="FIND YOUR NEAREST MAID" FontAttributes="Bold" FontSize="20" TextColor="Wheat" VerticalOptions="Center"/>
+                <Label Text="FIND AVAILABLE MAID" FontAttributes="Bold" FontSize="20" TextColor="Wheat" VerticalOptions="Center"/>
                 <Button HorizontalOptions="EndAndExpand" Padding="0" HeightRequest="35" 
                         x:Name="BtnLogout" Clicked="BtnLogout_Clicked" 
                         TextColor="Wheat" 
@@ -18,7 +18,6 @@
                         Margin="5" Text="Logout" BackgroundColor="Transparent" 
                         CornerRadius="15" 
                         BorderWidth="2"
-                        
                         />
             </StackLayout>
             
